@@ -42,6 +42,9 @@ _None yet._
 - [2026-06-28] SVG files in `public/` cannot be imported with `?raw` in Vite the same way as `src/` assets. Use `fetch(src).then(r => r.text())` to inline SVGs for animation, and render with `dangerouslySetInnerHTML`. Animate after state update in a second `useEffect` that depends on the fetched string.
 - [2026-06-28] `createScope({ root })` scopes CSS selector queries inside the `add()` callback. Prefer `root.querySelectorAll(...)` when querying within the scope root to be explicit.
 
+- [2026-06-27] Vite GitHub Pages `base` MUST have both leading and trailing slashes: `'/Neal-Konganda-Website/'`. Missing slashes break all asset paths on the subpath deploy.
+- [2026-06-27] GitHub Pages with Vite requires a GitHub Actions workflow (`.github/workflows/deploy.yml`) using `actions/upload-pages-artifact` + `actions/deploy-pages`. The `dist/` folder is gitignored and must be built in CI. Also requires Pages source set to "GitHub Actions" in repo Settings > Pages.
+
 ## Decision Log
 
 - 2026-06-25: Chose Vite + React + plain CSS (no Tailwind/component library). Design polish deferred to a later session.

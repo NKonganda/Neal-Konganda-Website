@@ -21,6 +21,9 @@
 - `.wolf/memory.md` — append-only session log (~120 tokens)
 - `.wolf/buglog.json` — structured bug/fix log (~10 tokens)
 
+## .github/
+- `.github/workflows/deploy.yml` — GitHub Actions workflow: builds with `npm ci && npm run build`, deploys dist/ to GitHub Pages via actions/deploy-pages (~30 tokens)
+
 ## docs/
 
 - `docs/animation-plan.md` — plan for adding Anime.js v4 motion: principles, setup, src/lib/motion.js wrapper, createScope React pattern, per-component spec, §4.5 scroll-linked "follow the scroll" motion (onScroll sync modes, progress rail/active-nav follower/parallax), a11y/perf, 5-phase rollout (~2200 tokens)

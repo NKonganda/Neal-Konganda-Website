@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "bug-001",
+    "timestamp": "2026-06-27T00:00:00Z",
+    "error_message": "GitHub Pages deploy not working — site not loading",
+    "file": "vite.config.js, .github/workflows/deploy.yml",
+    "root_cause": "Two issues: (1) vite.config.js had base: 'Neal-Konganda-Website' missing leading/trailing slashes, causing all asset paths to be wrong on the subpath deploy. (2) No GitHub Actions workflow existed, so the dist/ folder (gitignored) was never built and deployed.",
+    "fix": "Fixed base to '/Neal-Konganda-Website/' with proper slashes. Added .github/workflows/deploy.yml using actions/upload-pages-artifact + actions/deploy-pages pattern. Also requires GitHub Pages source set to 'GitHub Actions' in repo Settings > Pages.",
+    "tags": ["github-pages", "vite", "deploy", "base-path", "ci"],
+    "related_bugs": [],
+    "occurrences": 1,
+    "last_seen": "2026-06-27"
+  }
+]
