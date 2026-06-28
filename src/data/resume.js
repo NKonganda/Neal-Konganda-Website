@@ -83,16 +83,16 @@ export const experience = [
 
 export const projects = [
   {
-    name: "Brainwave Classifier",
-    thumb: `${import.meta.env.BASE_URL}thumbs/brainwave.svg`,
-    description: "Machine learning model that differentiates people based on their brain waves.",
+    name: "Justice AI",
+    thumb: `${import.meta.env.BASE_URL}thumbs/justicai.svg`,
+    description: "Privacy-focused legal research desktop app with fully local LLM inference — no cloud, no data transmission.",
     bullets: [
-      "Collected 100 hours of EEG data from 10 human subjects and preprocessed signals via FFT binning.",
-      "Trained a 2-layer neural network achieving 87% classification accuracy.",
-      "Deployed with a Python script for real-time detection using a Neuromaker device.",
+      "Hybrid retrieval combining BM25 keyword search with semantic cosine similarity across 16 file types.",
+      "Built on Tauri 2 + Rust backend with Qwen3-8B via llama.cpp; supports PDFs, Word docs, emails, and OCR images.",
+      "Auto-detects hallucinations, extracts entities, and organizes documents into cases with citation-grounded answers.",
     ],
-    link: "https://github.com/NKonganda/Neuromaker",
-    tags: ["Python", "Machine Learning", "EEG", "Neural Network"],
+    link: "https://github.com/lastbaa/JusticeAI",
+    tags: ["Rust", "React", "TypeScript", "Tauri", "LLM", "RAG"],
   },
   {
     name: "FC26 Squad Optimizer",
@@ -107,16 +107,16 @@ export const projects = [
     tags: ["Python", "PuLP", "Streamlit", "Linear Programming"],
   },
   {
-    name: "Justice AI",
-    thumb: `${import.meta.env.BASE_URL}thumbs/justicai.svg`,
-    description: "Privacy-focused legal research desktop app with fully local LLM inference — no cloud, no data transmission.",
+    name: "Brainwave Classifier",
+    thumb: `${import.meta.env.BASE_URL}thumbs/brainwave.svg`,
+    description: "Machine learning model that differentiates people based on their brain waves.",
     bullets: [
-      "Hybrid retrieval combining BM25 keyword search with semantic cosine similarity across 16 file types.",
-      "Built on Tauri 2 + Rust backend with Qwen3-8B via llama.cpp; supports PDFs, Word docs, emails, and OCR images.",
-      "Auto-detects hallucinations, extracts entities, and organizes documents into cases with citation-grounded answers.",
+      "Collected 100 hours of EEG data from 10 human subjects and preprocessed signals via FFT binning.",
+      "Trained a 2-layer neural network achieving 87% classification accuracy.",
+      "Deployed with a Python script for real-time detection using a Neuromaker device.",
     ],
-    link: "https://github.com/lastbaa/JusticeAI",
-    tags: ["Rust", "React", "TypeScript", "Tauri", "LLM", "RAG"],
+    link: "https://github.com/NKonganda/Neuromaker",
+    tags: ["Python", "Machine Learning", "EEG", "Neural Network"],
   },
 ];
 
