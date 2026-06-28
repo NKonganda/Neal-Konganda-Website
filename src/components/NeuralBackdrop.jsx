@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { animate } from 'animejs';
 import { reduceMotion } from '../lib/motion.js';
 import { CONFIG, nodeCountFor, buildNodes, stepNodes, drawNetwork } from '../lib/network.js';
 import './NeuralBackdrop.css';
@@ -43,12 +44,19 @@ export default function NeuralBackdrop() {
 
     // --- state ---
     const state = {
-      drawProgress: 1,   // Task 5 will animate this 0→1; hold at 1 for now
+      drawProgress: 0,
       flowOffset: 0,     // Task 4 will update this from scroll velocity
       velocity: 0,       // Tasks 4/8 will update this
       mouse: { x: 0, y: 0, active: false },
       dpr,
     };
+
+    // Animate edge draw-in: 0 → 1 over 1200ms on mount
+    animate(state, {
+      drawProgress: [0, 1],
+      duration: 1200,
+      ease: 'outExpo',
+    });
 
     // Scroll parallax
     const PARALLAX_FACTOR = 0.4;   // how much raw scroll delta amplifies into target flow
