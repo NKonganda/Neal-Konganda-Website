@@ -26,8 +26,16 @@ _None yet._
 - For SVG draw animations: SVG IDs must be on the element to animate (e.g., `<polyline id="bw-wave">`). Group player dots in `<g id="fc26-dots">` and animate the group opacity instead of individual circles to preserve their per-element opacity attributes.
 - `onScroll` used as `autoplay` with `once: true` works for one-shot reveals (section lines, data-reveal elements). Verified in browser.
 - Progress rail: use `position: fixed; left: 0; width: 2px; height: 100vh` with a fill child at `transform-origin: top; transform: scaleY(pct)` updated on scroll.
+- Canvas backdrop (NeuralBackdrop) is implemented. Tuning knobs all live in CONFIG in `src/lib/network.js`: baseCount (50), lineOpacity (0.07), driftSpeed (0.12), flowLerp (0.08), proximityRadius (140), igniteRadius (180). PARALLAX_FACTOR (0.4) and velocity decay (0.85×/frame) are in NeuralBackdrop.jsx.
+- Canvas DPR pattern: use `ctx.setTransform(dpr, 0, 0, dpr, 0, 0)` in resize (not `ctx.scale`) to avoid compounding on repeated resizes. Logical clear: `ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr)`.
 
 ## Do-Not-Repeat
+
+- [2026-06-27] When using anime.js `animate()` inside a React `useEffect`, ALWAYS store the return value and call `.cancel()` in the cleanup function. In StrictMode, effects mount/unmount/remount — two concurrent animations on the same target object will race. Fix: `const anim = animate(...); return () => { anim.cancel(); }`.
+- [2026-06-27] `IntersectionObserver` section triggers should use a `Set` of seen IDs to fire only once per mount. Without it, repeated scroll-throughs accumulate concurrent `animate(node, { pulse })` calls on the same node objects.
+- [2026-06-27] Do NOT attach a visibilitychange listener that does nothing. If the rAF tick already checks `document.hidden` inline (skip drawing), the listener is pure overhead. Omit it entirely.
+- [2026-06-27] In a Canvas rAF spark loop, ensure per-spark `t` is staggered by index (`+ s * 0.2`) before the `% 1` modulo so sparks travel independently rather than in lockstep.
+
 
 - [2026-06-28] Do NOT use `onScroll({ target: document.documentElement, sync: true })` for a page scroll progress indicator — Anime.js v4 computes the document's viewport bounds incorrectly and jumps to 100% immediately. Use a manual `scroll` event listener with `requestAnimationFrame` instead: `fill.style.transform = scaleY(scrollY / (scrollHeight - innerHeight))`.
 - [2026-06-28] Do NOT use `onScroll` standalone with callbacks (`onEnterForward`, `onLeaveBackward`) for driving non-animation side-effects (like moving a nav marker) — it's unreliable. Use a standard `IntersectionObserver` for section tracking and call `animate(marker, { translateY })` in the IO callback.
@@ -38,4 +46,5 @@ _None yet._
 
 - 2026-06-25: Chose Vite + React + plain CSS (no Tailwind/component library). Design polish deferred to a later session.
 - 2026-06-25: Sections included: Hero, Education, Experience, Projects. Awards, Activities, and Skills explicitly excluded by user. Graduation years and GPA also excluded from Education.
+- 2026-06-27: Executed neural-backdrop-plan.md — full-page Canvas 2D neural network backdrop added. Canvas renders at z-index:0 behind z-index:1 content. Pure network.js helpers + NeuralBackdrop React component. All 4 flourishes (draw-in, cursor glow, section ignition, velocity sparks) implemented. Ready to ship.
 - 2026-06-27: Implemented Portfolio.dc.html from claude.ai/design. Replaced top-nav + single-column layout with sticky sidebar + main two-column layout. Hero.jsx removed; replaced by Sidebar.jsx + About.jsx. Projects adapted to "publications" card style (thumbnail + description + tags). Experience adapted with company logo placeholder + indented roles. Skills adapted to 2-col category grid matching the design's "Services" section style.

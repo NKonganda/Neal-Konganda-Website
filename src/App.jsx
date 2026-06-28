@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import NeuralBackdrop from "./components/NeuralBackdrop";
+import BraidBackdrop from "./components/BraidBackdrop";
 import { reveal, reduceMotion, EASE, DUR } from "./lib/motion";
 import "./App.css";
 
@@ -99,8 +100,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="layout" ref={layoutRef}>
+    <>
       <NeuralBackdrop />
+      <BraidBackdrop />
+      <div className="layout" ref={layoutRef}>
       <div className="progress-rail" aria-hidden="true">
         <div className="progress-fill" />
       </div>
@@ -115,5 +118,6 @@ export default function App() {
         </footer>
       </main>
     </div>
+    </>
   );
 }

@@ -10,6 +10,7 @@
   padding: clamp(42px, 7vh, 84px) 6vw;
   position: relative;
   z-index: 1;
+  background: #fcfbf9;
 }
 
 .main {

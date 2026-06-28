@@ -1,0 +1,10 @@
+.braid-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}

@@ -106,6 +106,18 @@ export const projects = [
     link: "https://github.com/NKonganda/FC26LP",
     tags: ["Python", "PuLP", "Streamlit", "Linear Programming"],
   },
+  {
+    name: "Justice AI",
+    thumb: "/thumbs/justicai.svg",
+    description: "Privacy-focused legal research desktop app with fully local LLM inference — no cloud, no data transmission.",
+    bullets: [
+      "Hybrid retrieval combining BM25 keyword search with semantic cosine similarity across 16 file types.",
+      "Built on Tauri 2 + Rust backend with Qwen3-8B via llama.cpp; supports PDFs, Word docs, emails, and OCR images.",
+      "Auto-detects hallucinations, extracts entities, and organizes documents into cases with citation-grounded answers.",
+    ],
+    link: "https://github.com/lastbaa/JusticeAI",
+    tags: ["Rust", "React", "TypeScript", "Tauri", "LLM", "RAG"],
+  },
 ];
 
 export const skills = {
