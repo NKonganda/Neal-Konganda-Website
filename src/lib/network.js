@@ -190,8 +190,8 @@ export function drawNetwork(ctx, nodes, state) {
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (dist < CONFIG.maxDist) {
-        // Interpolate along edge
-        const t = (Date.now() * 0.001 * Math.abs(velocity) * 0.3) % 1;
+        // Interpolate along edge; stagger by index so sparks don't travel in lockstep
+        const t = (Date.now() * 0.001 * Math.abs(velocity) * 0.3 + s * 0.2) % 1;
         const sparkX = a.x + (b.x - a.x) * t;
         const sparkY = a.y + (b.y - a.y) * t + flowOffset;
 

@@ -45,14 +45,14 @@ export default function NeuralBackdrop() {
     // --- state ---
     const state = {
       drawProgress: 0,
-      flowOffset: 0,     // Task 4 will update this from scroll velocity
-      velocity: 0,       // Tasks 4/8 will update this
+      flowOffset: 0,
+      velocity: 0,
       mouse: { x: 0, y: 0, active: false },
       dpr,
     };
 
     // Animate edge draw-in: 0 → 1 over 1200ms on mount
-    animate(state, {
+    const drawAnim = animate(state, {
       drawProgress: [0, 1],
       duration: 1200,
       ease: 'outExpo',
@@ -61,12 +61,15 @@ export default function NeuralBackdrop() {
     // Section ignition pulses
     const SECTION_IDS = ['about', 'experience', 'projects', 'education'];
     let ignitionIO = null;
+    const ignitedSections = new Set();
 
     if (!reduceMotion()) {
       ignitionIO = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
+            if (ignitedSections.has(entry.target.id)) return;
+            ignitedSections.add(entry.target.id);
             const rect = entry.target.getBoundingClientRect();
             const sectionMidY = rect.top + rect.height / 2;
 
@@ -149,18 +152,12 @@ export default function NeuralBackdrop() {
 
     rafId = requestAnimationFrame(tick);
 
-    // visibilitychange listener registered for future use (loop self-guards via document.hidden)
-    function onVisibility() {
-      // no extra logic needed — tick() checks document.hidden itself
-    }
-    document.addEventListener('visibilitychange', onVisibility);
-
     return () => {
+      drawAnim.cancel();
       cancelAnimationFrame(rafId);
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('scroll', onScroll);
-      document.removeEventListener('visibilitychange', onVisibility);
       _mouseCleanup?.();
       ignitionIO?.disconnect();
     };
