@@ -23,3 +23,4 @@
 | 2026-06-27 | Executed neural-backdrop-plan.md via SDD: 9 tasks, 9 commits | src/lib/network.js, src/components/NeuralBackdrop.jsx/.css, src/App.jsx, src/App.css | Complete | ~8000 |
 | 19:48 | Updated README.md with accurate project description | README.md | done | ~100 |
 | 20:31 | Fixed 13x 404 errors: replaced all root-absolute public asset paths with import.meta.env.BASE_URL prefix | src/data/resume.js, src/components/Sidebar.jsx, src/components/ProjectThumb.jsx | 0 console errors, all assets load | ~800 |
+| 20:56 | Add Google site verification meta tag | index.html | success | ~10 tokens |
