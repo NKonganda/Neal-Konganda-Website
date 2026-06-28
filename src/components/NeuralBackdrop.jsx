@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { reduceMotion } from '../lib/motion.js';
-import { nodeCountFor, buildNodes, stepNodes, drawNetwork } from '../lib/network.js';
+import { CONFIG, nodeCountFor, buildNodes, stepNodes, drawNetwork } from '../lib/network.js';
 import './NeuralBackdrop.css';
 
 export default function NeuralBackdrop() {
@@ -50,6 +50,19 @@ export default function NeuralBackdrop() {
       dpr,
     };
 
+    // Scroll parallax
+    const PARALLAX_FACTOR = 0.4;   // how much raw scroll delta amplifies into target flow
+    let lastScrollY = window.scrollY;
+    let targetFlow = 0;
+
+    function onScroll() {
+      const rawDelta = window.scrollY - lastScrollY;
+      lastScrollY = window.scrollY;
+      targetFlow += rawDelta * PARALLAX_FACTOR;
+      state.velocity = rawDelta;  // raw; decays in tick
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     // --- rAF loop ---
     let rafId = null;
 
@@ -59,6 +72,9 @@ export default function NeuralBackdrop() {
         rafId = requestAnimationFrame(tick);
         return;
       }
+      // Eased flow and velocity decay
+      state.flowOffset += (targetFlow - state.flowOffset) * CONFIG.flowLerp;
+      state.velocity *= 0.85;   // decay toward 0 each frame
       stepNodes(nodes, w, h);
       drawNetwork(ctx, nodes, state);
       rafId = requestAnimationFrame(tick);
@@ -76,6 +92,7 @@ export default function NeuralBackdrop() {
       cancelAnimationFrame(rafId);
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', onScroll);
       document.removeEventListener('visibilitychange', onVisibility);
     };
   }, []);
