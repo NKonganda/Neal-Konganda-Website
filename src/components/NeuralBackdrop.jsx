@@ -108,6 +108,28 @@ export default function NeuralBackdrop() {
     }
     window.addEventListener('scroll', onScroll, { passive: true });
 
+    // Cursor proximity glow (skip on touch/coarse pointer)
+    let _mouseCleanup = null;
+    const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+    if (!isCoarse) {
+      function onMouseMove(e) {
+        state.mouse.x = e.clientX;
+        state.mouse.y = e.clientY;
+        state.mouse.active = true;
+      }
+      function onMouseLeave() {
+        state.mouse.active = false;
+      }
+      window.addEventListener('mousemove', onMouseMove, { passive: true });
+      window.addEventListener('mouseleave', onMouseLeave, { passive: true });
+
+      // Store cleanup refs (closures over the named functions)
+      _mouseCleanup = () => {
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('mouseleave', onMouseLeave);
+      };
+    }
+
     // --- rAF loop ---
     let rafId = null;
 
@@ -139,6 +161,7 @@ export default function NeuralBackdrop() {
       window.removeEventListener('resize', onResize);
       window.removeEventListener('scroll', onScroll);
       document.removeEventListener('visibilitychange', onVisibility);
+      _mouseCleanup?.();
       ignitionIO?.disconnect();
     };
   }, []);
