@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "animejs": {
+      "source": "bowtiedswan/animejs-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "6d5fd991cdff8d4eb0f88e2136da0c4168396edb093af3b397cbc6128cdabdd4"
+    }
+  }
+}

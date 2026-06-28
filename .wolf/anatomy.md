@@ -29,6 +29,7 @@
 ## src/
 
 - `src/lib/motion.js` — Anime.js v4 animation tokens (EASE, DUR), reduceMotion guard, reveal() scroll-trigger helper (~40 tokens)
+- `src/lib/network.js` — Pure Canvas 2D network helpers: COLORS, CONFIG, nodeCountFor, buildNodes, stepNodes, drawNetwork (~150 tokens)
 - `src/main.jsx` — React root mount; imports index.css and App.jsx (~30 tokens)
 - `src/index.css` — global CSS reset; #fcfbf9 background, #211f1b text, riseIn keyframe (~40 tokens)
 - `src/App.jsx` — root component; IntersectionObserver scroll-reveal effect + renders Sidebar + About/Experience/Projects/Education/Skills in two-column layout (~80 tokens)

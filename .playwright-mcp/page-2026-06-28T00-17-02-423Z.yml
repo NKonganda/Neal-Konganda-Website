@@ -1,0 +1,152 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - img "Neal Konganda" [ref=e6]
+    - heading "Neal Konganda" [level=1] [ref=e7]
+    - generic [ref=e8]: Computer Science Student & Software Engineer
+    - generic [ref=e9]:
+      - link "Email" [ref=e10] [cursor=pointer]:
+        - /url: mailto:neal.konganda@emory.edu
+      - link "LinkedIn" [ref=e11] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/nealkonganda/
+      - link "GitHub" [ref=e12] [cursor=pointer]:
+        - /url: https://github.com/NKonganda
+    - navigation [ref=e13]:
+      - link "Experience" [ref=e14] [cursor=pointer]:
+        - /url: "#experience"
+        - text: Experience
+      - link "Projects" [ref=e16] [cursor=pointer]:
+        - /url: "#projects"
+        - text: Projects
+      - link "Education" [ref=e18] [cursor=pointer]:
+        - /url: "#education"
+        - text: Education
+      - link "Skills" [ref=e20] [cursor=pointer]:
+        - /url: "#skills"
+        - text: Skills
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - paragraph [ref=e24]:
+        - text: I’m a Computer Science student at
+        - strong [ref=e25]: Emory University
+        - text: ", working at the intersection of machine learning and systems engineering."
+      - paragraph [ref=e26]:
+        - text: My experience spans building AI agent infrastructure at
+        - link "Qualcomm" [ref=e27] [cursor=pointer]:
+          - /url: "#experience"
+        - text: ", developing ML forecasting systems at"
+        - link "American Airlines" [ref=e28] [cursor=pointer]:
+          - /url: "#experience"
+        - text: ", and processing ECG waveform data for clinical research at the"
+        - link "MAIX Lab" [ref=e29] [cursor=pointer]:
+          - /url: "#experience"
+        - text: .
+      - paragraph [ref=e30]: I’m drawn to tools that are both technically rigorous and practically useful — whether that’s multi-agent orchestration, applied ML pipelines, or full-stack infrastructure.
+    - generic [ref=e31]:
+      - heading "Experience" [level=2] [ref=e32]
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e37]:
+            - generic [ref=e38]: Qualcomm Inc.
+            - generic [ref=e39]: San Diego, CA
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]:
+                - generic [ref=e43]: AI Engineer Intern
+                - generic [ref=e44]: May 2026 – Aug. 2026
+              - list [ref=e45]:
+                - listitem [ref=e46]: — Built a dashboard for managing AI agent fleets using React, Fastify, Drizzle, Postgres, and Claude SDK.
+                - listitem [ref=e47]: — Implemented Azure AD SSO with session persistence, team-based permissions, and CSRF protection.
+                - listitem [ref=e48]: "— Shipped end-to-end workflow: Jira/GitHub connectors to agent specs, codebase context agent (QODO) to orchestrating agent, monitoring personas with custom marketplace, and QA agent with report notifications."
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - generic [ref=e51]: Software Engineer Intern
+                - generic [ref=e52]: May 2025 – Aug. 2025
+              - list [ref=e53]:
+                - listitem [ref=e54]: — Built MCP servers enabling LLMs to securely query enterprise SQL and VectorDB sources, improving internal tool-augmented reasoning workflows.
+                - listitem [ref=e55]: — Developed a Python MCP client integrating AWS Bedrock LLMs with backend services using async I/O, connection pooling, request batching, and multithreaded execution.
+                - listitem [ref=e56]: — Designed a React-based chatbot interface and fully containerized the platform with Docker and Kubernetes, supporting 15,000+ concurrent users in production.
+        - generic [ref=e57]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: American Airlines
+            - generic [ref=e62]: Atlanta, GA
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: ML Project Intern
+              - generic [ref=e67]: Jan. 2025 – May 2025 · Jan. 2026 – May 2026
+            - list [ref=e68]:
+              - listitem [ref=e69]: — Built a multi-layer TensorFlow model with batch normalization and dropout to forecast baggage arrival distributions across 30 time bins using 50k+ Snowflake-extracted samples.
+              - listitem [ref=e70]: — Engineered a preprocessing pipeline using StandardScaler and OneHotEncoder across 20+ flight features, generating minutes-before-departure targets and discretizing arrivals into 15-minute intervals.
+              - listitem [ref=e71]: — Fit Weibull, Gamma, and Normal distributions to network-predicted arrival curves using SciPy optimization and R² scoring for operations planning.
+        - generic [ref=e72]:
+          - generic [ref=e75]:
+            - generic [ref=e76]: MAIX Lab, Emory University
+            - generic [ref=e77]: Atlanta, GA
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - generic [ref=e81]: Research Assistant
+              - generic [ref=e82]: Nov. 2025 – Present
+            - list [ref=e83]:
+              - listitem [ref=e84]: — Extracted and processed 12,000+ ECG waveform records from MIMIC-III across 3,400+ patient encounters.
+              - listitem [ref=e85]: — Derived 15 HRV features from ECG signals and aligned binned waveform data with clinical chart assessments to identify autonomic biomarkers for delirium and dementia.
+    - generic [ref=e86]:
+      - heading "Projects" [level=2] [ref=e87]
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e91]: figure
+          - generic [ref=e92]:
+            - link "Brainwave Classifier" [ref=e93] [cursor=pointer]:
+              - /url: https://github.com/NKonganda/Neuromaker
+            - generic [ref=e94]: Machine learning model that differentiates people based on their brain waves.
+            - generic [ref=e95]:
+              - generic [ref=e96]: Python
+              - generic [ref=e97]: Machine Learning
+              - generic [ref=e98]: EEG
+              - generic [ref=e99]: Neural Network
+              - link "GitHub ↗" [ref=e100] [cursor=pointer]:
+                - /url: https://github.com/NKonganda/Neuromaker
+        - generic [ref=e101]:
+          - generic [ref=e103]: figure
+          - generic [ref=e104]:
+            - link "FC26 Squad Optimizer" [ref=e105] [cursor=pointer]:
+              - /url: https://github.com/NKonganda/FC26LP
+            - generic [ref=e106]: Linear programming solution for optimal fantasy football squad selection from 18,000+ players.
+            - generic [ref=e107]:
+              - generic [ref=e108]: Python
+              - generic [ref=e109]: PuLP
+              - generic [ref=e110]: Streamlit
+              - generic [ref=e111]: Linear Programming
+              - link "GitHub ↗" [ref=e112] [cursor=pointer]:
+                - /url: https://github.com/NKonganda/FC26LP
+        - generic [ref=e113]:
+          - generic [ref=e115]: figure
+          - generic [ref=e116]:
+            - link "Car Mobile Game" [ref=e117] [cursor=pointer]:
+              - /url: https://github.com/NKonganda/CarMobileGame
+            - generic [ref=e118]: 3D mobile car game built in Unity with C#.
+            - generic [ref=e119]:
+              - generic [ref=e120]: C#
+              - generic [ref=e121]: Unity
+              - generic [ref=e122]: Game Development
+              - link "GitHub ↗" [ref=e123] [cursor=pointer]:
+                - /url: https://github.com/NKonganda/CarMobileGame
+    - generic [ref=e124]:
+      - heading "Education" [level=2] [ref=e125]
+      - generic [ref=e129]:
+        - generic [ref=e130]: Emory University
+        - generic [ref=e131]:
+          - generic [ref=e132]: Bachelor of Science, Computer Science
+          - generic [ref=e133]: 2023 – 2027
+        - generic [ref=e134]: "GPA: 3.8"
+    - generic [ref=e135]:
+      - heading "Skills" [level=2] [ref=e136]
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]: Languages
+          - generic [ref=e140]: Python, Java, C++, C, C#, Dart, Assembly, SQL
+        - generic [ref=e141]:
+          - generic [ref=e142]: Frameworks & Tools
+          - generic [ref=e143]: React, Docker, Kubernetes, MCP, AWS, Spring Boot, Flask, Pandas, NumPy
+        - generic [ref=e144]:
+          - generic [ref=e145]: Machine Learning
+          - generic [ref=e146]: TensorFlow, PyTorch, Keras, Matplotlib
+    - generic [ref=e147]: © 2026 Neal Konganda. All rights reserved.

@@ -1,0 +1,137 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "Neal Konganda" [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+      - generic [ref=e6]:
+        - link "Education" [ref=e7] [cursor=pointer]:
+          - /url: "#education"
+        - link "Experience" [ref=e8] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Projects" [ref=e9] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Skills" [ref=e10] [cursor=pointer]:
+          - /url: "#skills"
+  - main [ref=e11]:
+    - generic [ref=e12]:
+      - heading "Neal Konganda" [level=1] [ref=e13]
+      - paragraph [ref=e14]: Computer Science Student & Software Engineer
+      - generic [ref=e15]:
+        - link "neal.konganda@emory.edu" [ref=e16] [cursor=pointer]:
+          - /url: mailto:neal.konganda@emory.edu
+        - generic [ref=e17]: ·
+        - link "858-248-5464" [ref=e18] [cursor=pointer]:
+          - /url: tel:858-248-5464
+        - generic [ref=e19]: ·
+        - link "LinkedIn" [ref=e20] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nealkonganda/
+        - generic [ref=e21]: ·
+        - link "GitHub" [ref=e22] [cursor=pointer]:
+          - /url: https://github.com/NKonganda
+    - generic [ref=e23]:
+      - heading "Education" [level=2] [ref=e24]
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - strong [ref=e27]: Emory University
+          - paragraph [ref=e28]: Bachelor of Science, Computer Science
+          - paragraph [ref=e29]: "GPA: 3.9 / 4.0 · Graduation: May 2028"
+        - generic [ref=e30]: Atlanta, GA
+      - generic [ref=e31]: Relevant Courses:Data Structures & Algorithms, Data Mining, Machine Learning, Computer Architecture, Linear Programming, Discrete Math, Linear Algebra
+    - generic [ref=e32]:
+      - heading "Experience" [level=2] [ref=e33]
+      - article [ref=e34]:
+        - generic [ref=e35]:
+          - strong [ref=e36]: Qualcomm Inc.
+          - generic [ref=e37]: San Diego, CA
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: AI Engineer Intern
+            - generic [ref=e41]: May 2026 – Aug. 2026
+          - list [ref=e42]:
+            - listitem [ref=e43]: Built a dashboard for managing AI agent fleets using React, Fastify, Drizzle, Postgres, and Claude SDK.
+            - listitem [ref=e44]: Implemented Azure AD SSO with session persistence, team-based permissions, and CSRF protection.
+            - listitem [ref=e45]: "Shipped end-to-end workflow: Jira/GitHub connectors to agent specs, codebase context agent (QODO) to orchestrating agent, monitoring personas with custom marketplace, and QA agent with report notifications."
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: Software Engineer Intern
+            - generic [ref=e49]: May 2025 – Aug. 2025
+          - list [ref=e50]:
+            - listitem [ref=e51]: Built MCP servers enabling LLMs to securely query enterprise SQL and VectorDB sources, improving internal tool-augmented reasoning workflows.
+            - listitem [ref=e52]: Developed a Python MCP client integrating AWS Bedrock LLMs with backend services using async I/O, connection pooling, request batching, and multithreaded execution.
+            - listitem [ref=e53]: Designed a React-based chatbot interface and fully containerized the platform with Docker and Kubernetes, supporting 15,000+ concurrent users in production.
+      - article [ref=e54]:
+        - generic [ref=e55]:
+          - strong [ref=e56]: American Airlines
+          - generic [ref=e57]: Atlanta, GA
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]: ML Project Intern
+            - generic [ref=e61]: Jan. 2025 – May 2025 · Jan. 2026 – May 2026
+          - list [ref=e62]:
+            - listitem [ref=e63]: Built a multi-layer TensorFlow model with batch normalization and dropout to forecast baggage arrival distributions across 30 time bins using 50k+ Snowflake-extracted samples.
+            - listitem [ref=e64]: Engineered a preprocessing pipeline using StandardScaler and OneHotEncoder across 20+ flight features, generating minutes-before-departure targets and discretizing arrivals into 15-minute intervals.
+            - listitem [ref=e65]: Fit Weibull, Gamma, and Normal distributions to network-predicted arrival curves using SciPy optimization and R² scoring for operations planning.
+      - article [ref=e66]:
+        - generic [ref=e67]:
+          - strong [ref=e68]: MAIX Lab, Emory University
+          - generic [ref=e69]: Atlanta, GA
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: Research Assistant
+            - generic [ref=e73]: Nov. 2025 – Present
+          - list [ref=e74]:
+            - listitem [ref=e75]: Extracted and processed 12,000+ ECG waveform records from MIMIC-III across 3,400+ patient encounters.
+            - listitem [ref=e76]: Derived 15 HRV features from ECG signals and aligned binned waveform data with clinical chart assessments to identify autonomic biomarkers for delirium and dementia.
+    - generic [ref=e77]:
+      - heading "Projects" [level=2] [ref=e78]
+      - article [ref=e79]:
+        - generic [ref=e81]:
+          - link "Brainwave Classifier" [ref=e82] [cursor=pointer]:
+            - /url: https://github.com/NKonganda/Neuromaker
+          - paragraph [ref=e83]: Machine learning model that differentiates people based on their brain waves.
+        - list [ref=e84]:
+          - listitem [ref=e85]: Collected 100 hours of EEG data from 10 human subjects and preprocessed signals via FFT binning.
+          - listitem [ref=e86]: Trained a 2-layer neural network achieving 87% classification accuracy.
+          - listitem [ref=e87]: Deployed with a Python script for real-time detection using a Neuromaker device.
+        - generic [ref=e88]:
+          - generic [ref=e89]: Python
+          - generic [ref=e90]: Machine Learning
+          - generic [ref=e91]: EEG
+          - generic [ref=e92]: Neural Network
+      - article [ref=e93]:
+        - generic [ref=e95]:
+          - link "FC26 Squad Optimizer" [ref=e96] [cursor=pointer]:
+            - /url: https://github.com/NKonganda/FC26LP
+          - paragraph [ref=e97]: Linear programming solution for optimal fantasy football squad selection from 18,000+ players.
+        - list [ref=e98]:
+          - listitem [ref=e99]: Solved constraint satisfaction problem with PuLP + CBC solver under budget, formation, and club-diversity rules.
+          - listitem [ref=e100]: Built an interactive Streamlit dashboard with sidebar controls for budget, formation, and nationality filters.
+          - listitem [ref=e101]: Achieved 947.7 total rating with a €1B budget; included dual variable analysis for shadow pricing.
+        - generic [ref=e102]:
+          - generic [ref=e103]: Python
+          - generic [ref=e104]: PuLP
+          - generic [ref=e105]: Streamlit
+          - generic [ref=e106]: Linear Programming
+      - article [ref=e107]:
+        - generic [ref=e109]:
+          - link "Car Mobile Game" [ref=e110] [cursor=pointer]:
+            - /url: https://github.com/NKonganda/CarMobileGame
+          - paragraph [ref=e111]: 3D mobile car game built in Unity with C#.
+        - list [ref=e112]:
+          - listitem [ref=e113]: Developed core gameplay mechanics, physics, and controls in Unity.
+        - generic [ref=e114]:
+          - generic [ref=e115]: C#
+          - generic [ref=e116]: Unity
+          - generic [ref=e117]: Game Development
+    - generic [ref=e118]:
+      - heading "Technical Skills" [level=2] [ref=e119]
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - term [ref=e122]: Languages
+          - definition [ref=e123]: Python, Java, C++, C, C#, Dart, Assembly, SQL
+        - generic [ref=e124]:
+          - term [ref=e125]: Frameworks & Tools
+          - definition [ref=e126]: React, Docker, Kubernetes, MCP, AWS, Spring Boot, Flask, Pandas, NumPy
+        - generic [ref=e127]:
+          - term [ref=e128]: Machine Learning
+          - definition [ref=e129]: TensorFlow, PyTorch, Keras, Matplotlib

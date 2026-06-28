@@ -1,0 +1,134 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - img "Neal Konganda" [ref=e6]
+    - heading "Neal Konganda" [level=1] [ref=e7]
+    - generic [ref=e8]: Computer Science Student & Software Engineer
+    - generic [ref=e9]:
+      - link "Email" [ref=e10] [cursor=pointer]:
+        - /url: mailto:neal.konganda@emory.edu
+      - link "LinkedIn" [ref=e11] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/nealkonganda/
+      - link "GitHub" [ref=e12] [cursor=pointer]:
+        - /url: https://github.com/NKonganda
+    - navigation [ref=e13]:
+      - link "Experience" [ref=e15] [cursor=pointer]:
+        - /url: "#experience"
+        - text: Experience
+      - link "Projects" [ref=e17] [cursor=pointer]:
+        - /url: "#projects"
+        - text: Projects
+      - link "Education" [ref=e19] [cursor=pointer]:
+        - /url: "#education"
+        - text: Education
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - paragraph [ref=e23]:
+        - text: I’m a Computer Science student at
+        - strong [ref=e24]: Emory University
+        - text: ", working with the application of machine learning."
+      - paragraph [ref=e25]:
+        - text: My experience spans building AI agent infrastructure at
+        - link "Qualcomm" [ref=e26] [cursor=pointer]:
+          - /url: "#experience"
+        - text: ", developing ML forecasting systems at"
+        - link "American Airlines" [ref=e27] [cursor=pointer]:
+          - /url: "#experience"
+        - text: ", and processing ECG waveform data for clinical research at the"
+        - link "MAIX Lab" [ref=e28] [cursor=pointer]:
+          - /url: "#experience"
+        - text: .
+      - paragraph [ref=e29]: I’m drawn to the using machine learning to solve modern problems
+    - generic [ref=e30]:
+      - heading "Experience" [level=2] [ref=e31]
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - img "Qualcomm Inc." [ref=e36]
+            - generic [ref=e37]:
+              - generic [ref=e38]: Qualcomm Inc.
+              - generic [ref=e39]: San Diego, CA
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]:
+                - generic [ref=e43]: AI Engineer Intern
+                - generic [ref=e44]: May 2026 – Aug. 2026
+              - list [ref=e45]:
+                - listitem [ref=e46]: — Built a dashboard for managing AI agent fleets using React, Fastify, Drizzle, Postgres, and Claude SDK.
+                - listitem [ref=e47]: — Implemented Azure AD SSO with session persistence, team-based permissions, and CSRF protection.
+                - listitem [ref=e48]: "— Shipped end-to-end workflow: Jira/GitHub connectors to agent specs, codebase context agent (QODO) to orchestrating agent, monitoring personas with custom marketplace, and QA agent with report notifications."
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - generic [ref=e51]: Software Engineer Intern
+                - generic [ref=e52]: May 2025 – Aug. 2025
+              - list [ref=e53]:
+                - listitem [ref=e54]: — Built MCP servers enabling LLMs to securely query enterprise SQL and VectorDB sources, improving internal tool-augmented reasoning workflows.
+                - listitem [ref=e55]: — Developed a Python MCP client integrating AWS Bedrock LLMs with backend services using async I/O, connection pooling, request batching, and multithreaded execution.
+                - listitem [ref=e56]: — Designed a React-based chatbot interface and fully containerized the platform with Docker and Kubernetes, supporting 15,000+ concurrent users in production.
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - img "American Airlines" [ref=e59]
+            - generic [ref=e60]:
+              - generic [ref=e61]: American Airlines
+              - generic [ref=e62]: Atlanta, GA
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: ML Project Intern
+              - generic [ref=e67]: Jan. 2025 – May 2025 · Jan. 2026 – May 2026
+            - list [ref=e68]:
+              - listitem [ref=e69]: — Built a multi-layer TensorFlow model with batch normalization and dropout to forecast baggage arrival distributions across 30 time bins using 50k+ Snowflake-extracted samples.
+              - listitem [ref=e70]: — Engineered a preprocessing pipeline using StandardScaler and OneHotEncoder across 20+ flight features, generating minutes-before-departure targets and discretizing arrivals into 15-minute intervals.
+              - listitem [ref=e71]: — Fit Weibull, Gamma, and Normal distributions to network-predicted arrival curves using SciPy optimization and R² scoring for operations planning.
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - img "MAIX Lab, Emory University" [ref=e74]
+            - generic [ref=e75]:
+              - generic [ref=e76]: MAIX Lab, Emory University
+              - generic [ref=e77]: Atlanta, GA
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - generic [ref=e81]: Research Assistant
+              - generic [ref=e82]: Nov. 2025 – Present
+            - list [ref=e83]:
+              - listitem [ref=e84]: — Extracted and processed 12,000+ ECG waveform records from MIMIC-III across 3,400+ patient encounters.
+              - listitem [ref=e85]: — Derived 15 HRV features from ECG signals and aligned binned waveform data with clinical chart assessments to identify autonomic biomarkers for delirium and dementia.
+    - generic [ref=e86]:
+      - heading "Projects" [level=2] [ref=e87]
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - img "Brainwave Classifier" [ref=e91]:
+            - img [ref=e92]:
+              - generic [ref=e96]: EEG · NEURAL NETWORK
+          - generic [ref=e97]:
+            - link "Brainwave Classifier" [ref=e98] [cursor=pointer]:
+              - /url: https://github.com/NKonganda/Neuromaker
+            - generic [ref=e99]: Machine learning model that differentiates people based on their brain waves.
+            - generic [ref=e100]:
+              - generic [ref=e101]: Python
+              - generic [ref=e102]: Machine Learning
+              - generic [ref=e103]: EEG
+              - generic [ref=e104]: Neural Network
+              - link "GitHub ↗" [ref=e105] [cursor=pointer]:
+                - /url: https://github.com/NKonganda/Neuromaker
+        - generic [ref=e106]:
+          - img "FC26 Squad Optimizer" [ref=e108]:
+            - img [ref=e109]:
+              - generic [ref=e128]: LINEAR PROGRAMMING
+          - generic [ref=e129]:
+            - link "FC26 Squad Optimizer" [ref=e130] [cursor=pointer]:
+              - /url: https://github.com/NKonganda/FC26LP
+            - generic [ref=e131]: Linear programming solution for optimal fantasy football squad selection from 18,000+ players.
+            - generic [ref=e132]:
+              - generic [ref=e133]: Python
+              - generic [ref=e134]: PuLP
+              - generic [ref=e135]: Streamlit
+              - generic [ref=e136]: Linear Programming
+              - link "GitHub ↗" [ref=e137] [cursor=pointer]:
+                - /url: https://github.com/NKonganda/FC26LP
+    - generic [ref=e138]:
+      - heading "Education" [level=2] [ref=e139]
+      - generic [ref=e141]:
+        - img "Emory University" [ref=e142]
+        - generic [ref=e143]:
+          - generic [ref=e144]: Emory University
+          - generic [ref=e145]: Bachelor of Science, Computer Science
+    - generic [ref=e146]: © 2026 Neal Konganda. All rights reserved.
