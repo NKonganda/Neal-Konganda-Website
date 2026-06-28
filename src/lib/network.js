@@ -104,8 +104,9 @@ export function drawNetwork(ctx, nodes, state) {
         const ay = a.y + flowOffset;
         const by = b.y + flowOffset;
 
+        const velocityBoost = Math.min(1, Math.abs(velocity) / 8);
         const alpha =
-          CONFIG.lineOpacity * (1 - dist / CONFIG.maxDist) * drawProgress;
+          CONFIG.lineOpacity * (1 - dist / CONFIG.maxDist) * drawProgress * (1 + velocityBoost);
 
         ctx.save();
         ctx.globalAlpha = alpha;
