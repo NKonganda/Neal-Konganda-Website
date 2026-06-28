@@ -58,6 +58,43 @@ export default function NeuralBackdrop() {
       ease: 'outExpo',
     });
 
+    // Section ignition pulses
+    const SECTION_IDS = ['about', 'experience', 'projects', 'education'];
+    let ignitionIO = null;
+
+    if (!reduceMotion()) {
+      ignitionIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const rect = entry.target.getBoundingClientRect();
+            const sectionMidY = rect.top + rect.height / 2;
+
+            // Find nodes within igniteRadius of the section's vertical center
+            const nearNodes = nodes.filter(
+              (n) => Math.abs(n.y - sectionMidY) < CONFIG.igniteRadius
+            );
+
+            // Staggered pulse: animate each node's pulse property 0 → 3 → 0
+            nearNodes.forEach((node, i) => {
+              animate(node, {
+                pulse: [0, 3, 0],
+                duration: 900,
+                ease: 'outQuad',
+                delay: i * 30,
+              });
+            });
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      SECTION_IDS.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) ignitionIO.observe(el);
+      });
+    }
+
     // Scroll parallax
     const PARALLAX_FACTOR = 0.4;   // how much raw scroll delta amplifies into target flow
     let lastScrollY = window.scrollY;
@@ -102,6 +139,7 @@ export default function NeuralBackdrop() {
       window.removeEventListener('resize', onResize);
       window.removeEventListener('scroll', onScroll);
       document.removeEventListener('visibilitychange', onVisibility);
+      ignitionIO?.disconnect();
     };
   }, []);
 
