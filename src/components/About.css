@@ -1,0 +1,25 @@
+.about {
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: #38342c;
+  max-width: 64ch;
+}
+
+.about p + p {
+  margin-top: 18px;
+}
+
+.about strong {
+  font-weight: 600;
+}
+
+.about a {
+  color: #1f5fae;
+  text-decoration: none;
+  border-bottom: 1px solid #b9cce4;
+  transition: border-color 0.3s ease;
+}
+
+.about a:hover {
+  border-bottom-color: #1f5fae;
+}

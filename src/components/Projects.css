@@ -1,0 +1,118 @@
+.proj-list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.proj-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.proj-thumb {
+  aspect-ratio: 16/10;
+  border-radius: 4px;
+  background-color: #efece6;
+  background-image: repeating-linear-gradient(135deg, #e6e2da 0 9px, #efece6 9px 18px);
+  border: 1px solid #e3ded4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease;
+}
+
+.proj-thumb-label {
+  font-family: ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: #9a9182;
+  text-transform: uppercase;
+}
+
+.proj-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.proj-thumb-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.proj-thumb-svg svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  display: block;
+}
+
+.proj-item:hover .proj-thumb {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(31, 95, 174, 0.12);
+}
+
+.proj-title {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: #211f1b;
+  text-decoration: none;
+  line-height: 1.4;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.proj-title:hover {
+  color: #1f5fae;
+}
+
+.proj-desc {
+  font-size: 14px;
+  color: #57524a;
+  margin-top: 6px;
+  line-height: 1.55;
+}
+
+.proj-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.proj-tag {
+  font-family: ui-monospace, monospace;
+  font-size: 11.5px;
+  color: #1f5fae;
+  background: #eef3fa;
+  border: 1px solid #d6e2f2;
+  border-radius: 4px;
+  padding: 3px 9px;
+}
+
+.proj-link {
+  font-size: 13px;
+  color: #948b7c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.proj-link:hover {
+  color: #1f5fae;
+}
+
+@media (max-width: 500px) {
+  .proj-item {
+    grid-template-columns: 1fr;
+  }
+  .proj-thumb {
+    max-width: 200px;
+  }
+}

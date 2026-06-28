@@ -1,0 +1,30 @@
+.skills-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 18px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.skills-category {
+  font-weight: 600;
+  color: #211f1b;
+}
+
+.skills-items {
+  color: #57524a;
+}
+
+@media (max-width: 500px) {
+  .skills-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

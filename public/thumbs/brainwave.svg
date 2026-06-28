@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 94">
+  <rect width="150" height="94" fill="#efece6"/>
+  <!-- EEG waveform lines -->
+  <polyline id="bw-wave" points="8,47 18,47 22,20 26,74 30,30 34,64 38,47 48,47 52,15 56,79 60,35 64,59 68,47 78,47 82,22 86,72 90,32 94,62 98,47 108,47 112,18 116,76 120,28 124,66 128,47 142,47" fill="none" stroke="#1f5fae" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Second channel, muted -->
+  <polyline id="bw-wave-2" points="8,62 18,62 22,50 26,74 30,55 34,69 38,62 48,62 52,48 56,76 60,54 64,70 68,62 78,62 82,49 86,75 90,55 94,69 98,62 108,62 112,50 116,74 120,56 124,68 128,62 142,62" fill="none" stroke="#1f5fae" stroke-width="1" opacity="0.3" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="75" y="89" font-family="ui-monospace, monospace" font-size="7" fill="#948b7c" text-anchor="middle" letter-spacing="0.06em">EEG · NEURAL NETWORK</text>
+</svg>

@@ -1,0 +1,100 @@
+.exp-list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.exp-company {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exp-company-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.exp-logo {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: #efece6;
+  background-image: repeating-linear-gradient(135deg, #e6e2da 0 6px, #efece6 6px 12px);
+  border: 1px solid #e3ded4;
+}
+
+.exp-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.exp-company-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #211f1b;
+}
+
+.exp-location {
+  font-size: 13.5px;
+  color: #948b7c;
+  margin-top: 2px;
+}
+
+.exp-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 50px;
+}
+
+.exp-role-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 8px;
+}
+
+.exp-role-title {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #211f1b;
+}
+
+.exp-period {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #948b7c;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+
+.exp-bullets li {
+  font-size: 14px;
+  color: #57524a;
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #c5bfb5;
+  font-size: 12px;
+  line-height: 1.6;
+}
