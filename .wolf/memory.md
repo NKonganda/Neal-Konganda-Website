@@ -24,3 +24,4 @@
 | 19:48 | Updated README.md with accurate project description | README.md | done | ~100 |
 | 20:31 | Fixed 13x 404 errors: replaced all root-absolute public asset paths with import.meta.env.BASE_URL prefix | src/data/resume.js, src/components/Sidebar.jsx, src/components/ProjectThumb.jsx | 0 console errors, all assets load | ~800 |
 | 20:56 | Add Google site verification meta tag | index.html | success | ~10 tokens |
+| 2026-06-28 | Tuned network.js: more dots (50→85 base, 22→40 min), visible connections (lineOpacity 0.07→0.11), organic random wander added to stepNodes with speed clamp | src/lib/network.js | done | ~300 |

@@ -4,16 +4,18 @@ export const COLORS = {
 };
 
 export const CONFIG = {
-  baseCount: 50,        // node count at ~1440px width
-  minCount: 22,         // floor for small screens
-  maxDist: 150,         // px; edges drawn only between nodes closer than this
+  baseCount: 85,        // node count at ~1440px width
+  minCount: 40,         // floor for small screens
+  maxDist: 135,         // px; edges drawn only between nodes closer than this
   driftSpeed: 0.12,     // px/frame baseline drift
-  lineOpacity: 0.07,    // whisper
-  nodeOpacity: 0.5,     // nodes a touch stronger than lines
+  lineOpacity: 0.11,    // faint but readable
+  nodeOpacity: 0.55,    // nodes a touch stronger than lines
   nodeRadius: 1.6,
   flowLerp: 0.08,       // smoothing for scroll-velocity → flowOffset
   proximityRadius: 140, // cursor glow reach
   igniteRadius: 180,    // section-pulse reach (vertical band)
+  wander: 0.012,        // per-frame random acceleration magnitude
+  maxSpeed: 0.22,       // speed clamp so wander never runs away
 };
 
 /**
@@ -59,6 +61,16 @@ export function buildNodes(count, w, h) {
 export function stepNodes(nodes, w, h) {
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i];
+
+    // Organic random wander: nudge velocity each frame then clamp speed
+    node.vx += (Math.random() - 0.5) * CONFIG.wander;
+    node.vy += (Math.random() - 0.5) * CONFIG.wander;
+    const speed = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
+    if (speed > CONFIG.maxSpeed) {
+      node.vx = (node.vx / speed) * CONFIG.maxSpeed;
+      node.vy = (node.vy / speed) * CONFIG.maxSpeed;
+    }
+
     node.x += node.vx;
     node.y += node.vy;
 
@@ -85,9 +97,14 @@ export function stepNodes(nodes, w, h) {
  */
 export function drawNetwork(ctx, nodes, state) {
   const { drawProgress, flowOffset, velocity, mouse, dpr } = state;
+  const h = ctx.canvas.height / dpr;
+
+  // Wrap drawn y so nodes stay distributed across the full viewport at any scroll depth.
+  // flowOffset is an unbounded accumulator; without wrapping, nodes drift off the bottom.
+  const wrapY = (y) => ((y % h) + h) % h;
 
   // Clear canvas
-  ctx.clearRect(0, 0, ctx.canvas.width / dpr, ctx.canvas.height / dpr);
+  ctx.clearRect(0, 0, ctx.canvas.width / dpr, h);
 
   // ---- Draw edges ----
   for (let i = 0; i < nodes.length; i++) {
@@ -101,8 +118,11 @@ export function drawNetwork(ctx, nodes, state) {
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (dist < CONFIG.maxDist) {
-        const ay = a.y + flowOffset;
-        const by = b.y + flowOffset;
+        const ay = wrapY(a.y + flowOffset);
+        const by = wrapY(b.y + flowOffset);
+
+        // Skip edges whose drawn endpoints cross the wrap boundary (would draw a long diagonal)
+        if (Math.abs(ay - by) >= CONFIG.maxDist) continue;
 
         const velocityBoost = Math.min(1, Math.abs(velocity) / 8);
         const alpha =
@@ -124,7 +144,7 @@ export function drawNetwork(ctx, nodes, state) {
   // ---- Draw nodes ----
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i];
-    const ny = node.y + flowOffset;
+    const ny = wrapY(node.y + flowOffset);
     const radius = node.baseR + node.pulse;
 
     ctx.save();
@@ -140,7 +160,7 @@ export function drawNetwork(ctx, nodes, state) {
   if (mouse.active) {
     for (let i = 0; i < nodes.length; i++) {
       const node = nodes[i];
-      const ny = node.y + flowOffset;
+      const ny = wrapY(node.y + flowOffset);
 
       const dx = node.x - mouse.x;
       const dy = ny - mouse.y;
@@ -190,10 +210,16 @@ export function drawNetwork(ctx, nodes, state) {
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (dist < CONFIG.maxDist) {
+        const ay = wrapY(a.y + flowOffset);
+        const by = wrapY(b.y + flowOffset);
+
+        // Skip sparks on wrap-crossing edges
+        if (Math.abs(ay - by) >= CONFIG.maxDist) continue;
+
         // Interpolate along edge; stagger by index so sparks don't travel in lockstep
         const t = (Date.now() * 0.001 * Math.abs(velocity) * 0.3 + s * 0.2) % 1;
         const sparkX = a.x + (b.x - a.x) * t;
-        const sparkY = a.y + (b.y - a.y) * t + flowOffset;
+        const sparkY = ay + (by - ay) * t;
 
         const sparkAlpha = 0.6 * Math.min(1, Math.abs(velocity) / 8);
 

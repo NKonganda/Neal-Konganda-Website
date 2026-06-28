@@ -22,5 +22,17 @@
     "related_bugs": ["bug-001"],
     "occurrences": 1,
     "last_seen": "2026-06-28"
+  },
+  {
+    "id": "bug-003",
+    "timestamp": "2026-06-28T00:00:00Z",
+    "error_message": "Backdrop dots only appear at the top of the page; bottom of viewport is empty",
+    "file": "src/lib/network.js",
+    "root_cause": "flowOffset is an unbounded accumulator: each scroll event adds rawDelta * PARALLAX_FACTOR to targetFlow, which flowOffset lerps toward. After scrolling, flowOffset is a large positive number. All node drawn positions are node.y + flowOffset — since node.y is clamped to [0, h] by toroidal wrapping but flowOffset is unbounded, most nodes' drawn y values exceed h and are rendered off the bottom of the fixed canvas. Only nodes with very small node.y remain visible, all clustered at the top.",
+    "fix": "Added wrapY helper in drawNetwork: wrapY = (y) => ((y % h) + h) % h. Applied to all drawn y positions (nodes, edge endpoints, cursor glow, spark interpolation). Also skip edges and sparks where the two wrapped y endpoints are >= CONFIG.maxDist apart (those pairs crossed the wrap boundary and would draw a long diagonal line).",
+    "tags": ["canvas", "neural-backdrop", "parallax", "flowOffset", "toroidal-wrap", "dots-missing"],
+    "related_bugs": [],
+    "occurrences": 1,
+    "last_seen": "2026-06-28"
   }
 ]
