@@ -21,3 +21,4 @@
 | 18:46 | Task 9 a11y+perf checklist audit — all 9 items pass, lint clean, build success | NeuralBackdrop.jsx, network.js, NeuralBackdrop.css | no fixes needed | ~600 |
 | 18:50 | Applied 4 code-review fixes to NeuralBackdrop: drawAnim.cancel() in cleanup, remove empty visibilitychange listener, ignitedSections Set guard, spark t stagger by index | NeuralBackdrop.jsx, network.js | committed 83166da, lint clean, build clean | ~600 |
 | 2026-06-27 | Executed neural-backdrop-plan.md via SDD: 9 tasks, 9 commits | src/lib/network.js, src/components/NeuralBackdrop.jsx/.css, src/App.jsx, src/App.css | Complete | ~8000 |
+| 19:48 | Updated README.md with accurate project description | README.md | done | ~100 |
