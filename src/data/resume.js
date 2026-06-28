@@ -8,7 +8,7 @@ export const profile = {
 
 export const education = {
   school: "Emory University",
-  logo: "/logos/emory.svg",
+  logo: `${import.meta.env.BASE_URL}logos/emory.svg`,
   location: "Atlanta, GA",
   degree: "Bachelor of Science, Computer Science",
   courses: [
@@ -25,7 +25,7 @@ export const education = {
 export const experience = [
   {
     company: "Qualcomm Inc.",
-    logo: "/logos/qualcomm.svg",
+    logo: `${import.meta.env.BASE_URL}logos/qualcomm.svg`,
     location: "San Diego, CA",
     roles: [
       {
@@ -50,7 +50,7 @@ export const experience = [
   },
   {
     company: "American Airlines",
-    logo: "/logos/american-airlines.svg",
+    logo: `${import.meta.env.BASE_URL}logos/american-airlines.svg`,
     location: "Atlanta, GA",
     roles: [
       {
@@ -66,7 +66,7 @@ export const experience = [
   },
   {
     company: "MAIX Lab, Emory University",
-    logo: "/logos/emory.svg",
+    logo: `${import.meta.env.BASE_URL}logos/emory.svg`,
     location: "Atlanta, GA",
     roles: [
       {
@@ -84,7 +84,7 @@ export const experience = [
 export const projects = [
   {
     name: "Brainwave Classifier",
-    thumb: "/thumbs/brainwave.svg",
+    thumb: `${import.meta.env.BASE_URL}thumbs/brainwave.svg`,
     description: "Machine learning model that differentiates people based on their brain waves.",
     bullets: [
       "Collected 100 hours of EEG data from 10 human subjects and preprocessed signals via FFT binning.",
@@ -96,7 +96,7 @@ export const projects = [
   },
   {
     name: "FC26 Squad Optimizer",
-    thumb: "/thumbs/fc26.svg",
+    thumb: `${import.meta.env.BASE_URL}thumbs/fc26.svg`,
     description: "Linear programming solution for optimal fantasy football squad selection from 18,000+ players.",
     bullets: [
       "Solved constraint satisfaction problem with PuLP + CBC solver under budget, formation, and club-diversity rules.",
@@ -108,7 +108,7 @@ export const projects = [
   },
   {
     name: "Justice AI",
-    thumb: "/thumbs/justicai.svg",
+    thumb: `${import.meta.env.BASE_URL}thumbs/justicai.svg`,
     description: "Privacy-focused legal research desktop app with fully local LLM inference — no cloud, no data transmission.",
     bullets: [
       "Hybrid retrieval combining BM25 keyword search with semantic cosine similarity across 16 file types.",

@@ -7,8 +7,20 @@
     "root_cause": "Two issues: (1) vite.config.js had base: 'Neal-Konganda-Website' missing leading/trailing slashes, causing all asset paths to be wrong on the subpath deploy. (2) No GitHub Actions workflow existed, so the dist/ folder (gitignored) was never built and deployed.",
     "fix": "Fixed base to '/Neal-Konganda-Website/' with proper slashes. Added .github/workflows/deploy.yml using actions/upload-pages-artifact + actions/deploy-pages pattern. Also requires GitHub Pages source set to 'GitHub Actions' in repo Settings > Pages.",
     "tags": ["github-pages", "vite", "deploy", "base-path", "ci"],
-    "related_bugs": [],
+    "related_bugs": ["bug-002"],
     "occurrences": 1,
     "last_seen": "2026-06-27"
+  },
+  {
+    "id": "bug-002",
+    "timestamp": "2026-06-28T00:00:00Z",
+    "error_message": "13x 404 errors: profile.png, logos/*.svg, thumbs/*.svg all fail to load in dev and prod",
+    "file": "src/data/resume.js, src/components/Sidebar.jsx, src/components/ProjectThumb.jsx",
+    "root_cause": "All public asset paths were hardcoded as root-absolute strings (e.g. '/profile.png'). With base: '/Neal-Konganda-Website/' in vite.config.js, Vite serves assets at '/Neal-Konganda-Website/profile.png' but the code requested '/profile.png' — a 404 in both dev and prod.",
+    "fix": "Replaced all hardcoded public asset paths with import.meta.env.BASE_URL prefix (e.g. `${import.meta.env.BASE_URL}profile.png`). Vite substitutes BASE_URL with the configured base at build time. Also updated ANIM_FNS keys in ProjectThumb.jsx to use BASE_URL so the src→animFn lookup still works.",
+    "tags": ["vite", "base-url", "404", "public-assets", "import.meta.env"],
+    "related_bugs": ["bug-001"],
+    "occurrences": 1,
+    "last_seen": "2026-06-28"
   }
 ]

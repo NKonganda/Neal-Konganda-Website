@@ -35,7 +35,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar" ref={rootRef}>
       <div className="sidebar-photo">
-        <img src="/profile.png" alt="Neal Konganda" className="sidebar-photo-img" />
+        <img src={`${import.meta.env.BASE_URL}profile.png`} alt="Neal Konganda" className="sidebar-photo-img" />
       </div>
       <h1 className="sidebar-name">{profile.name}</h1>
       <div className="sidebar-title">{profile.title}</div>

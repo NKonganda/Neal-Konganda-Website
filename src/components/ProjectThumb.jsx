@@ -34,8 +34,8 @@ function animateFc26(container) {
 }
 
 const ANIM_FNS = {
-  "/thumbs/brainwave.svg": animateBrainwave,
-  "/thumbs/fc26.svg": animateFc26,
+  [`${import.meta.env.BASE_URL}thumbs/brainwave.svg`]: animateBrainwave,
+  [`${import.meta.env.BASE_URL}thumbs/fc26.svg`]: animateFc26,
 };
 
 export default function ProjectThumb({ src, alt }) {

@@ -43,6 +43,7 @@ _None yet._
 - [2026-06-28] `createScope({ root })` scopes CSS selector queries inside the `add()` callback. Prefer `root.querySelectorAll(...)` when querying within the scope root to be explicit.
 
 - [2026-06-27] Vite GitHub Pages `base` MUST have both leading and trailing slashes: `'/Neal-Konganda-Website/'`. Missing slashes break all asset paths on the subpath deploy.
+- [2026-06-28] All public asset paths (in JSX and data files) MUST use `import.meta.env.BASE_URL` prefix rather than root-absolute strings like `/profile.png`. With a non-root `base` in vite.config.js, `/profile.png` resolves to the wrong URL in both dev and prod. Pattern: `` `${import.meta.env.BASE_URL}profile.png` ``. ANIM_FNS keys in ProjectThumb.jsx must also use BASE_URL so src→animFn lookup matches.
 - [2026-06-27] GitHub Pages with Vite requires a GitHub Actions workflow (`.github/workflows/deploy.yml`) using `actions/upload-pages-artifact` + `actions/deploy-pages`. The `dist/` folder is gitignored and must be built in CI. Also requires Pages source set to "GitHub Actions" in repo Settings > Pages.
 
 ## Decision Log
