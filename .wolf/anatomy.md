@@ -54,3 +54,5 @@
 - `src/components/Skills.jsx` — maps skills{} as 2-col grid (category | items); data-reveal per row (~25 tokens)
 - `src/components/ProjectThumb.jsx` — fetches SVG thumbs via fetch(), inlines HTML with dangerouslySetInnerHTML, runs createDrawable Anime.js animation on bw-wave/fc26 elements on scroll into view (~80 tokens)
 - `src/components/Skills.css` — skills grid: 170px category col + items, responsive stack at 500px (~25 tokens)
+- `src/components/NeuralBackdrop.jsx` — canvas backdrop component: DPR-aware sizing, debounced resize, rAF drift loop calling stepNodes+drawNetwork; reduceMotion guard inside useEffect (~80 tokens)
+- `src/components/NeuralBackdrop.css` — fixed-position canvas styles: inset:0, 100vw/100vh, z-index:0, pointer-events:none (~15 tokens)
