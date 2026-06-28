@@ -5,6 +5,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
+import NeuralBackdrop from "./components/NeuralBackdrop";
 import { reveal, reduceMotion, EASE, DUR } from "./lib/motion";
 import "./App.css";
 
@@ -99,6 +100,7 @@ export default function App() {
 
   return (
     <div className="layout" ref={layoutRef}>
+      <NeuralBackdrop />
       <div className="progress-rail" aria-hidden="true">
         <div className="progress-fill" />
       </div>
