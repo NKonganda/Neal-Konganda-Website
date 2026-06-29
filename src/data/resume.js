@@ -3,7 +3,7 @@ export const profile = {
   email: "neal.konganda@emory.edu",
   linkedin: "https://www.linkedin.com/in/nealkonganda/",
   github: "https://github.com/NKonganda",
-  title: "Computer Science Student & Software Engineer",
+  title: "Computer Science Student",
 };
 
 export const education = {

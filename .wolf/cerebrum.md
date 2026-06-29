@@ -17,7 +17,7 @@ _None yet._
 - User does NOT want graduation years or GPA shown in the Education section.
 - Design language (from Portfolio.dc.html): warm cream `#fcfbf9` bg, `#211f1b` text, `#1f5fae` blue accent, Newsreader serif for headings/name, Hanken Grotesk for body. Hatch pattern `repeating-linear-gradient(135deg, #e6e2da 0 Npx, #efece6 Npx 2Npx)` used as placeholder for photos/logos/figures.
 - Scroll-reveal pattern: `useEffect` in App.jsx sets `opacity:0; transform:translateY(22px)` on `[data-reveal]` elements, then IntersectionObserver reveals them. 2500ms fallback timer shows all in case IO doesn't fire.
-- Sidebar uses CSS `position: sticky; top: 40px` inside a flex row — works without JS.
+- Sidebar uses CSS `position: sticky; top: 40px` inside a flex row — works without JS. On mobile (<820px) sticky must be overridden to `position: static` and flex-basis reset so the sidebar stacks above content without colliding during scroll.
 - Nav dot animation: CSS `transition: gap` on the parent `<a>` + `transform: scale(1.8)` on the dot span on hover. Pure CSS via `:hover` selectors in Sidebar.css.
 
 - Animation plan lives in `docs/animation-plan.md` (Anime.js v4). Key API for scroll-linked "follow the scroll" motion: pass `onScroll({ target, enter, leave, sync })` as an animation's `autoplay`. `sync: true` = 1:1 scrub bound to scroll; `sync: <number>` = eased/lagged scrub (use for spatial parallax/markers — the lag is what makes it feel like it "follows" you); `sync: 'play pause'` = method-based at section boundaries. Thresholds use `"<target-edge> <container-edge>"` (top/center/bottom/min/max, relative offsets ok); `debug:true` overlays trigger lines. Reduced-motion must disable all scrubbing.

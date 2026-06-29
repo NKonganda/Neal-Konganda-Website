@@ -25,3 +25,5 @@
 | 20:31 | Fixed 13x 404 errors: replaced all root-absolute public asset paths with import.meta.env.BASE_URL prefix | src/data/resume.js, src/components/Sidebar.jsx, src/components/ProjectThumb.jsx | 0 console errors, all assets load | ~800 |
 | 20:56 | Add Google site verification meta tag | index.html | success | ~10 tokens |
 | 2026-06-28 | Tuned network.js: more dots (50→85 base, 22→40 min), visible connections (lineOpacity 0.07→0.11), organic random wander added to stepNodes with speed clamp | src/lib/network.js | done | ~300 |
+| 2026-06-28 | Removed "& Software Engineer" from profile title; sidebar now shows "Computer Science Student" only | src/data/resume.js | done | ~20 |
+| 2026-06-28 | Fixed mobile layout: sidebar sticky collision with main content — added @media (max-width: 820px) to stack columns and override sidebar to position:static | src/App.css, src/components/Sidebar.css | done, bug-004 logged | ~150 |
